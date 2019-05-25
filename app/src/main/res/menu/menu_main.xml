@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.tomkarho.android.notekeeper.MainActivity">
+    <item android:title="Previous" android:id="@+id/action_previous"
+          android:icon="@drawable/ic_arrow_previous_white_24dp" app:showAsAction="always|withText"/>
+    <item android:title="Next" android:id="@+id/action_next" app:showAsAction="always|withText"
+          android:icon="@drawable/ic_arrow_next_white_24dp"/>
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:orderInCategory="100"
+          app:showAsAction="never"/>
+</menu>
