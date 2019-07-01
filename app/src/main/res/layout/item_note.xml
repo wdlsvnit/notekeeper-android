@@ -11,14 +11,15 @@
     app:cardCornerRadius="8dp"
     app:strokeWidth="1dp">
 
-    <android.support.constraint.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/item_note_info"
             style="@style/AppTheme.Text"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
@@ -32,7 +33,7 @@
         <TextView
             android:id="@+id/item_note_course"
             style="@style/AppTheme.Text"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
@@ -45,7 +46,7 @@
         <TextView
             android:id="@+id/item_note_title"
             style="@style/AppTheme.Text"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
@@ -58,7 +59,7 @@
         <TextView
             android:id="@+id/item_note_text"
             style="@style/AppTheme.Text"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="8dp"
@@ -68,6 +69,6 @@
             app:layout_constraintTop_toBottomOf="@+id/item_note_title"
             tools:text="Test 1" />
 
-    </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
 
 </android.support.design.card.MaterialCardView>
