@@ -2,4 +2,6 @@
     <string name="app_name">Edit note</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_list">Note Keeper</string>
+
+    <string name="note">Note Info:</string>
 </resources>
