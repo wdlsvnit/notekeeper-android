@@ -23,7 +23,7 @@ class ListActivity : AppCompatActivity(), NoteAdp.Listener {
             addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.HORIZONTAL))
         }
 
-        listOfNotes.adapter = NoteAdp(DataManager.notes, this, this)
+        listOfNotes.adapter = NoteAdp(DataManager.notes, this)
     }
 
     override fun onItemClicked(adapterPosition: Int) {

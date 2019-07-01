@@ -9,7 +9,7 @@ import com.example.android.notekeeper.NoteInfo
 import com.example.android.notekeeper.R
 import kotlinx.android.synthetic.main.item_note.view.*
 
-class NoteAdp(private val noteInfoList: List<NoteInfo>, private val context: Context, private val listener: Listener) :
+class NoteAdp(private val noteInfoList: List<NoteInfo>, private val listener: Listener) :
         RecyclerView.Adapter<NoteAdp.ViewHolder>() {
 
     interface Listener {
@@ -24,7 +24,7 @@ class NoteAdp(private val noteInfoList: List<NoteInfo>, private val context: Con
     }
 
     override fun onBindViewHolder(holder: ViewHolder, positionItem: Int) {
-        holder.bindView(noteInfoList[positionItem], context)
+        holder.bindView(noteInfoList[positionItem], holder.itemView.context)
     }
 
     override fun getItemCount(): Int = noteInfoList.size
