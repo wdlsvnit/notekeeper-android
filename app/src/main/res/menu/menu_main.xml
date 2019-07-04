@@ -2,6 +2,8 @@
       xmlns:app="http://schemas.android.com/apk/res-auto"
       xmlns:tools="http://schemas.android.com/tools"
       tools:context="com.tomkarho.android.notekeeper.MainActivity">
+    <item android:title="Save" android:id="@+id/action_save"
+          android:icon="@drawable/ic_save_white_24dp" app:showAsAction="always|withText"/>
     <item android:title="Previous" android:id="@+id/action_previous"
           android:icon="@drawable/ic_arrow_previous_white_24dp" app:showAsAction="always|withText"/>
     <item android:title="Next" android:id="@+id/action_next" app:showAsAction="always|withText"

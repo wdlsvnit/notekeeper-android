@@ -12,6 +12,8 @@ import kotlinx.android.synthetic.main.content_main.*
 class MainActivity : AppCompatActivity() {
 
     private var notePosition = POSITION_NOT_SET
+    // Index of the new created note
+    private var newNotePosition: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     private fun createNote() {
         DataManager.notes.add(NoteInfo())
         notePosition = DataManager.notes.lastIndex
+        newNotePosition = notePosition
     }
 
     private fun displayNote() {
@@ -64,13 +67,25 @@ class MainActivity : AppCompatActivity() {
                 moveNext()
                 true
             }
+            R.id.action_save -> {
+                // Check if you need to delete the new created note
+                if (newNotePosition != null && newNotePosition != notePosition) {
+                    removeNote(newNotePosition!!)
+                }
+                saveNote()
+                finish()
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-        saveNote()
+    override fun onBackPressed() {
+        super.onBackPressed()
+        // Check if you need to delete the new created note
+        if (newNotePosition != null) {
+            removeNote(newNotePosition!!)
+        }
     }
 
     private fun saveNote() {
@@ -78,6 +93,14 @@ class MainActivity : AppCompatActivity() {
         note.title = textFieldTitle.text.toString()
         note.text = textFieldNoteContent.text.toString()
         note.course = dropDownCourses.selectedItem as CourseInfo
+    }
+
+    /**
+     * Remove note at specified [index].
+     * @param index Index of the note to be removed
+     */
+    private fun removeNote(index: Int) {
+        DataManager.notes.removeAt(index)
     }
 
     override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
